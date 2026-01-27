@@ -1,0 +1,610 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:us-west-1:392066615426:service/mal-exercise-dev-cluster/mal-exercise-dev-service",
+        "serviceName": "mal-exercise-dev-service",
+        "clusterArn": "arn:aws:ecs:us-west-1:392066615426:cluster/mal-exercise-dev-cluster",
+        "loadBalancers": [
+            {
+                "targetGroupArn": "arn:aws:elasticloadbalancing:us-west-1:392066615426:targetgroup/mal-exercise-dev-tg/1ce25fd3df082f74",
+                "containerName": "app",
+                "containerPort": 8080
+            }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 0,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:us-west-1:392066615426:task-definition/mal-exercise-dev-task:3",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100,
+            "strategy": "ROLLING",
+            "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/4653031095434806106",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:us-west-1:392066615426:task-definition/mal-exercise-dev-task:3",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2026-01-28T01:12:34.132000+05:30",
+                "updatedAt": "2026-01-28T01:12:34.132000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0fe7cf94c22972da6",
+                            "subnet-098ff1f080624e881"
+                        ],
+                        "securityGroups": [
+                            "sg-071d43e1cde746522"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/4653031095434806106 in progress."
+            },
+            {
+                "id": "ecs-svc/9793541732177841233",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:us-west-1:392066615426:task-definition/mal-exercise-dev-task:1",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2026-01-28T01:08:12.141000+05:30",
+                "updatedAt": "2026-01-28T01:09:03.612000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0fe7cf94c22972da6",
+                            "subnet-098ff1f080624e881"
+                        ],
+                        "securityGroups": [
+                            "sg-071d43e1cde746522"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/9793541732177841233 in progress."
+            },
+            {
+                "id": "ecs-svc/0683726487279791098",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:us-west-1:392066615426:task-definition/mal-exercise-dev-task:1",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 7,
+                "createdAt": "2026-01-28T00:44:49.160000+05:30",
+                "updatedAt": "2026-01-28T01:09:03.618000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0fe7cf94c22972da6",
+                            "subnet-098ff1f080624e881"
+                        ],
+                        "securityGroups": [
+                            "sg-071d43e1cde746522"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/0683726487279791098 in progress."
+            },
+            {
+                "id": "ecs-svc/2001181714686975433",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:us-west-1:392066615426:task-definition/mal-exercise-dev-task:1",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2026-01-28T01:05:48.594000+05:30",
+                "updatedAt": "2026-01-28T01:09:03.678000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0fe7cf94c22972da6",
+                            "subnet-098ff1f080624e881"
+                        ],
+                        "securityGroups": [
+                            "sg-071d43e1cde746522"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/2001181714686975433 in progress."
+            }
+        ],
+        "roleArn": "arn:aws:iam::392066615426:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "2d30ac1f-8703-4c0e-a460-071b1b084ff1",
+                "createdAt": "2026-01-28T01:09:22.276000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "81075dc2-0d25-44a6-9277-81693eb23d0f",
+                "createdAt": "2026-01-28T01:09:04.476000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 2b8a5ea42e5743d99a0c9f63a85695d6)."
+            },
+            {
+                "id": "a8126b8a-d5da-41d9-ac18-70371027ac53",
+                "createdAt": "2026-01-28T01:08:33.290000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "cc67fd48-59ab-4724-b193-e7a6b5558e83",
+                "createdAt": "2026-01-28T01:08:13.916000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task bf45f8be55004a5b85cbf224f3b90d75)."
+            },
+            {
+                "id": "0eabcbc9-9f4a-42d0-90d8-e282c1f5bd36",
+                "createdAt": "2026-01-28T01:08:13.432000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task ca736f24337b4444bff8ef4cfe80d92c)."
+            },
+            {
+                "id": "ddab7173-f74d-4dcb-8f12-eb5f06cc9b94",
+                "createdAt": "2026-01-28T01:07:04.252000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "aef8bd76-7334-4600-bdff-26d24e5d8c77",
+                "createdAt": "2026-01-28T01:06:55.248000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task bb7903f121de40a19ca18de20c8e411b)."
+            },
+            {
+                "id": "ded41935-3213-427e-8f52-698632049090",
+                "createdAt": "2026-01-28T01:06:45.859000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 44350d145b7e4fa7b9ab2f585836b146)."
+            },
+            {
+                "id": "bccb291d-e8ec-4b9a-afcf-e01b8b5a0da4",
+                "createdAt": "2026-01-28T01:06:15.149000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "d3986f13-e56f-423d-aff4-eb9fc8a88737",
+                "createdAt": "2026-01-28T01:05:55.963000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 3865d88806b741a0ad1b78b43bc3ae55)."
+            },
+            {
+                "id": "64a0b11c-1ac6-4257-98e0-448a9a689cb6",
+                "createdAt": "2026-01-28T01:02:43.041000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "052e5afe-f2b3-4a81-851d-e33cf5cfc098",
+                "createdAt": "2026-01-28T01:02:23.647000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task c78586001f9f4dffb40d38d47b01c51e)."
+            },
+            {
+                "id": "9fb93543-7229-481d-88f3-8ad7462fa659",
+                "createdAt": "2026-01-28T00:57:33.501000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ebaf721d-cdfd-4cfe-8749-93f2395f2052",
+                "createdAt": "2026-01-28T00:57:15.106000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task a1f41e589864433ab252d2c5e908555e)."
+            },
+            {
+                "id": "b211c450-5f76-4037-bd94-b4c05618bf86",
+                "createdAt": "2026-01-28T00:56:41.673000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "052abed5-2a0a-48b4-9a8e-80d5b69bb6af",
+                "createdAt": "2026-01-28T00:56:23.008000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 1da2899ce48b4844b1d29ec5732f9331)."
+            },
+            {
+                "id": "b7cea8c5-6cab-4376-9efd-c252fb27acd7",
+                "createdAt": "2026-01-28T00:55:51.999000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "71b28b16-2a6d-4be5-8918-eb567dd0ed81",
+                "createdAt": "2026-01-28T00:55:33.435000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task f9924712b3eb4ce1bf2ea76fb844ddca)."
+            },
+            {
+                "id": "3eb46fd9-4074-4f86-ae72-503bb6abca70",
+                "createdAt": "2026-01-28T00:52:35.526000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "d20db91b-c81b-414b-9e94-ce6f30a09d9c",
+                "createdAt": "2026-01-28T00:52:16.970000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task e7165bede693412a87d322ec900bf890)."
+            },
+            {
+                "id": "0765036a-fb89-4fc2-8e08-c632eaf288e3",
+                "createdAt": "2026-01-28T00:47:09.186000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "a491141e-189a-4f17-81e2-eca219c655da",
+                "createdAt": "2026-01-28T00:46:50.188000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 09b012d284a24448b20d12a8e812fba8)."
+            },
+            {
+                "id": "8b550002-e74f-415c-9e12-29354cde3276",
+                "createdAt": "2026-01-28T00:46:18.455000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ebc88352-1730-4f35-bead-207fa3788433",
+                "createdAt": "2026-01-28T00:45:59.693000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 8207dcdddd494cfda9c096a14e8fca87)."
+            },
+            {
+                "id": "68e62716-4ca5-4729-a4ae-cbc173861350",
+                "createdAt": "2026-01-28T00:45:30.018000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "487aa898-da9a-4183-b74e-59eb7a1bc837",
+                "createdAt": "2026-01-28T00:45:12.007000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 21598397a13943c9a344e0277ac202a6)."
+            },
+            {
+                "id": "28ce7b0a-fe23-4ebe-af66-91baf5a0265d",
+                "createdAt": "2026-01-28T00:45:00.544000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "e7000cc8-c39f-40bb-b563-bfc94bc96e74",
+                "createdAt": "2026-01-28T00:44:50.802000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 705b658674de44e38cee54fb33cb1d3c)."
+            },
+            {
+                "id": "a935a273-ca44-4e95-aa4a-82ab06f7755b",
+                "createdAt": "2026-01-28T00:40:25.375000+05:30",
+                "message": "(service mal-exercise-dev-service) is unable to consistently start tasks successfully. For more information, see the Troubleshooting section of the Amazon ECS Developer Guide."
+            },
+            {
+                "id": "102b5243-d770-4d64-9996-d3683cb01fad",
+                "createdAt": "2026-01-28T00:40:25.374000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "95dddb43-48cf-4488-8af8-2eedfd7b91a2",
+                "createdAt": "2026-01-28T00:40:06.138000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 6dad0b04f71c41ddb4e3406226387d7b)."
+            },
+            {
+                "id": "af5a9837-8f20-4b90-9732-4cbb75fbf9e5",
+                "createdAt": "2026-01-28T00:34:57.247000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "77ac8831-fb9b-473f-aeb3-d2f8ca2a48e2",
+                "createdAt": "2026-01-28T00:34:38.019000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 628dd61e0d0349fc89a24e7bfd6720f3)."
+            },
+            {
+                "id": "a548ca86-4d3b-498f-9b01-39f5a17bfa85",
+                "createdAt": "2026-01-28T00:29:26.750000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "7f616a0d-afaa-4c69-8b87-a70cf0789bd3",
+                "createdAt": "2026-01-28T00:29:07.875000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 2db67c521f834185b51be817b6dec711)."
+            },
+            {
+                "id": "669b343e-7925-48cf-841f-55e6e927ba23",
+                "createdAt": "2026-01-28T00:24:01.941000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "6af0f9ab-9a63-41ef-8896-1245744abb47",
+                "createdAt": "2026-01-28T00:23:43.642000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 06fd9c81cb05488c9d96327d62428087)."
+            },
+            {
+                "id": "52a22db5-2169-4ff2-bd9a-f454936b6025",
+                "createdAt": "2026-01-28T00:18:46.460000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "6ea8274f-d6d1-484e-8ee0-9ede989cab64",
+                "createdAt": "2026-01-28T00:18:28.061000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 1b2bd04d33374f6083e94e54cc71e4a4)."
+            },
+            {
+                "id": "1d7592fa-1618-4dcb-84dc-a3bedcec5cf4",
+                "createdAt": "2026-01-28T00:13:34.096000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "7fe3e4b8-8c70-44ef-8cfa-8ae0fb4beada",
+                "createdAt": "2026-01-28T00:13:24.522000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 2696882a39944a2282e9725aae07fa45)."
+            },
+            {
+                "id": "22d80797-2c2f-4fb4-9f70-fbb270cade16",
+                "createdAt": "2026-01-28T00:08:17.208000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ba0dddb3-ff1f-4a69-a482-95262dca0cf1",
+                "createdAt": "2026-01-28T00:07:58.993000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task df139d3a6efd4001899a9ced4710d376)."
+            },
+            {
+                "id": "d3f907c4-f425-4ac7-800a-c01ffdd62358",
+                "createdAt": "2026-01-28T00:03:03.549000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ae74ea78-7594-41e2-94bd-1a0e02948da2",
+                "createdAt": "2026-01-28T00:02:44.138000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task e13ce0ef9fd6488ab99e46e40b696206)."
+            },
+            {
+                "id": "ba91749d-db66-48f5-b6ee-7f45bcce0452",
+                "createdAt": "2026-01-27T23:57:51.704000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "4d9c16be-0df9-48a7-b18e-39fb96800920",
+                "createdAt": "2026-01-27T23:57:32.539000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 17bc3a052edc492ca810f479b7d28c39)."
+            },
+            {
+                "id": "aeb5166f-ea52-461b-bb07-478d4e8dbbfe",
+                "createdAt": "2026-01-27T23:52:21.263000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "528b624c-83a4-4fee-830a-d5aca3809f17",
+                "createdAt": "2026-01-27T23:52:02.665000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task a7f7d2014d8346159f249039b22baa36)."
+            },
+            {
+                "id": "cc243e2b-a746-4579-b435-bf58a1c0cccd",
+                "createdAt": "2026-01-27T23:46:57.602000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ae5cd38c-5408-4805-af41-844726857a3c",
+                "createdAt": "2026-01-27T23:46:38.931000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task c7e640904a0d4448bf0c890825c67095)."
+            },
+            {
+                "id": "80fa9ef0-ed09-43e0-b63e-99db96011911",
+                "createdAt": "2026-01-27T23:41:50.713000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "f5f5f699-092b-4d00-a7e2-03cfc5cd914d",
+                "createdAt": "2026-01-27T23:41:32.458000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 5c9cebe933d64380a16c998fd3f0259d)."
+            },
+            {
+                "id": "9452df8b-697c-43c8-a6e0-6dfe06aee254",
+                "createdAt": "2026-01-27T23:36:40.702000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "9de7f1b7-8380-4cb4-81d5-bcab57f000c9",
+                "createdAt": "2026-01-27T23:36:22.191000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 9bc480d286cf4a77be3da76ab23be6cb)."
+            },
+            {
+                "id": "63b1c687-2998-4e1c-aab8-7b62aece6f51",
+                "createdAt": "2026-01-27T23:31:16.820000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "df62ac1a-15e9-4bf5-a3bb-543849a42665",
+                "createdAt": "2026-01-27T23:30:58.510000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 5f5418fcc2064846bd021cf1dcde985d)."
+            },
+            {
+                "id": "d0ad03a1-9c93-4849-97dc-ada602c4dac3",
+                "createdAt": "2026-01-27T23:30:26.030000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "85c9d3cf-1d14-4828-998f-9fb0c823bd23",
+                "createdAt": "2026-01-27T23:30:07.911000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 67ab0f686790427e8d3dc72108398461)."
+            },
+            {
+                "id": "f7fab559-75a8-4b38-a691-bd53cc3ec6bb",
+                "createdAt": "2026-01-27T23:29:35.115000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "a298320e-2946-41c7-b678-8cb0cef8882b",
+                "createdAt": "2026-01-27T23:29:15.924000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 7f0a04b6a0344027ac5f79bcde51e9a9)."
+            },
+            {
+                "id": "90012f62-4658-47db-b594-175fa90bef4e",
+                "createdAt": "2026-01-27T23:28:45.521000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "373bdf56-9f4b-40b2-80ed-6e6b942f7ed4",
+                "createdAt": "2026-01-27T23:28:26.563000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 25a1be0be11949dea7ea31c2166a8059)."
+            },
+            {
+                "id": "a519bc2e-75b6-4d21-a85f-f8ee4f7a30bf",
+                "createdAt": "2026-01-27T23:27:55.040000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "0f1d6672-607a-4393-8a54-a1ffa4817b69",
+                "createdAt": "2026-01-27T23:27:36.943000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task db69883d51b34ee5981f14d374b851df)."
+            },
+            {
+                "id": "68d96401-9bb1-4958-9137-91b42a93a620",
+                "createdAt": "2026-01-27T23:27:05.780000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "333cd134-96d8-4a8c-a780-44e2d5a4ed64",
+                "createdAt": "2026-01-27T23:26:47.123000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 763587c85dd0434087759fc0f64fbaef)."
+            },
+            {
+                "id": "f078b4bd-f3d3-4ebb-9922-131e6ad4a01e",
+                "createdAt": "2026-01-27T23:26:14.663000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "6a21332a-af87-4d43-b29f-75fd3bc370b0",
+                "createdAt": "2026-01-27T23:25:56.135000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 9954693e8e3d441ca63f3537361f4c4a)."
+            },
+            {
+                "id": "71806156-a840-4a87-84b8-a7453ea3df1f",
+                "createdAt": "2026-01-27T23:25:23.149000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "09ae15da-52d9-4f71-b0bf-d85a0c7e3601",
+                "createdAt": "2026-01-27T23:25:14.015000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 134e8b2e00cc4bdbaeeb53d332fa658a)."
+            },
+            {
+                "id": "1dcd38df-a50e-45e3-b6fe-f9d15d599040",
+                "createdAt": "2026-01-27T23:24:40.891000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "fd55bca6-1246-4c58-a94e-5611970a97f1",
+                "createdAt": "2026-01-27T23:24:22.088000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 28d93f6f689a4904a5130a9db46a42a3)."
+            },
+            {
+                "id": "868b277c-f84d-4dfd-942a-70c45afa2989",
+                "createdAt": "2026-01-27T23:23:49.951000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "eadbdf32-b48f-4060-b6a2-7af89d48e710",
+                "createdAt": "2026-01-27T23:23:31.421000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 18bdc787ce37456bbe52e266b1ca5256)."
+            },
+            {
+                "id": "de304eb0-5c9b-49c6-8b73-bb640360ddc2",
+                "createdAt": "2026-01-27T23:23:01.291000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "0a9fe728-1ca7-407e-826d-e1a0db854740",
+                "createdAt": "2026-01-27T23:22:43.570000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task b0eaf6b486bc4e5da008d5633adfee98)."
+            },
+            {
+                "id": "f8270f2a-20cb-4fe9-a7bc-16918471db0d",
+                "createdAt": "2026-01-27T23:22:13.292000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "ae161873-cbfa-4968-a22e-5bd579f7e60f",
+                "createdAt": "2026-01-27T23:21:55.239000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 6e3ed9ca2dfc42a8b147487d81543808)."
+            },
+            {
+                "id": "56db8d99-e2b7-4f5a-9a0b-9f4cc20d0513",
+                "createdAt": "2026-01-27T23:21:46.979000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "18ddf9f8-6ad2-4870-a3e1-fc5337e236ab",
+                "createdAt": "2026-01-27T23:21:28.097000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 0ef628c4b8e744f38d3c4014adcd2a60)."
+            },
+            {
+                "id": "9a48bb4e-7208-47ed-b19a-8b70423bd42c",
+                "createdAt": "2026-01-27T23:20:57.698000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "72e5f6b3-3522-4216-a16d-85bd3ed988a5",
+                "createdAt": "2026-01-27T23:20:40.013000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 50ad9c29658f41dda6d3114faccdba85)."
+            },
+            {
+                "id": "85f82d25-2821-45ee-b8bc-7ff994ddccbf",
+                "createdAt": "2026-01-27T23:20:07.117000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "5cf91398-b5b8-407b-81ad-6fd40f3d05f3",
+                "createdAt": "2026-01-27T23:19:49.013000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task b1c31fa1233d4850b450c7d76998d82e)."
+            },
+            {
+                "id": "9104787e-ba95-4571-b0f3-80496941febe",
+                "createdAt": "2026-01-27T23:19:47.632000+05:30",
+                "message": "(service mal-exercise-dev-service) was unable to place a task. Reason: InternalError: failed to create container model: failed to normalize image reference \"PLACEHOLDER_IMAGE\". Launch a new task to retry.."
+            },
+            {
+                "id": "8f891237-28dc-49bb-b9c9-32b7b594a7f0",
+                "createdAt": "2026-01-27T23:19:37.968000+05:30",
+                "message": "(service mal-exercise-dev-service) has started 1 tasks: (task 128ec06d722b4b8abf12be6d0622ea60)."
+            }
+        ],
+        "createdAt": "2026-01-27T23:19:09.672000+05:30",
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-0fe7cf94c22972da6",
+                    "subnet-098ff1f080624e881"
+                ],
+                "securityGroups": [
+                    "sg-071d43e1cde746522"
+                ],
+                "assignPublicIp": "DISABLED"
+            }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::392066615426:root",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false,
+        "availabilityZoneRebalancing": "DISABLED"
+    }
+}
