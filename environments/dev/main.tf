@@ -98,7 +98,7 @@ module "ecs" {
   project_name           = var.project_name
   stage                  = var.stage
   aws_region             = var.aws_region
-  image                  = "PLACEHOLDER_IMAGE" # CI/CD updates this
+  image                  = var.image
   execution_role_arn     = module.iam.ecs_execution_role_arn
   task_role_arn          = module.iam.ecs_task_role_arn
   log_group_name         = module.logs.log_group_name
