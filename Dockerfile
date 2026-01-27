@@ -20,6 +20,8 @@ COPY src ./src
 RUN --mount=type=cache,target=/root/.m2 \
     mvn clean package -DskipTests
 
+RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
+
 
 RUN curl -L https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip \
   -o /tmp/newrelic.zip && \
@@ -57,7 +59,10 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=20s \
 
 
 #strating the app
-ENTRYPOINT exec java \
-  -javaagent:/app/newrelic/newrelic.jar \
-  -Dnewrelic.config.agent_enabled=${NEW_RELIC_ENABLED:-true} \
-  -jar mal_ai.jar
+ENTRYPOINT [
+  "java",
+  "-javaagent:/app/newrelic/newrelic.jar",
+  "-Dnewrelic.config.agent_enabled=true",
+  "-jar",
+  "mal_ai.jar"
+]
