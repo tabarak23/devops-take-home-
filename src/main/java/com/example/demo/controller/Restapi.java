@@ -20,7 +20,7 @@ public class Restapi {
 
     @GetMapping("/")
     public String redirect() {
-    return "redirect:/hello";
+    return "Hello World";
     }
 
 }
