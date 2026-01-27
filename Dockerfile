@@ -2,6 +2,12 @@
 #using maven an jdk to compile the java app
 #choosing multi stage build keeps the final image size small and secure
 FROM maven:3.9.6-eclipse-temurin-17 AS foundation
+#installing build time dependencies curl and unzip
+RUN apt-get update && \
+    apt-get install -y curl unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+
 # sets working directory
 WORKDIR /app 
 #copying pom first for layer caching which allows to cache dependencies if pom is unchanged
