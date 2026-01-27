@@ -16,4 +16,13 @@ public class Restapi {
     public Map<String, String> health() {
         return Map.of("status", "ok");
     }
+
+
+    @GetMapping("/")
+    public String redirect() {
+    return "redirect:/hello";
+    }
+
 }
+
+
