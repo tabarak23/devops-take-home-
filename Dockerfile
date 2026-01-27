@@ -20,6 +20,11 @@ COPY src ./src
 RUN --mount=type=cache,target=/root/.m2 \
     mvn clean package -DskipTests
 
+
+RUN curl -L https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip \
+  -o /tmp/newrelic.zip && \
+  unzip /tmp/newrelic.zip -d /app && \
+  rm /tmp/newrelic.zip    
 # last stage
 #lightweight jre image to run the app
 #could have used distrolesss but health check would break coz it doesnt support shell annd pacakage managers
@@ -39,7 +44,7 @@ WORKDIR /app
 #copying alreadu built jar file from foundation stage
 #keeps run time image small
 COPY --from=foundation /app/target/*.jar mal_ai.jar
-COPY newrelic /app/newrelic 
+COPY --from=build /app/newrelic /app/newrelic
 
 
 #expose app port
