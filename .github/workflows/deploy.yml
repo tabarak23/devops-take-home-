@@ -20,7 +20,7 @@ env:
   STAGE: dev
 
   # Docker / ECR
-  ECR_REPOSITORY: mal-exercise
+  ECR_REPOSITORY: mal-exercise-dev
 
 # --------------------------------------------------
 # 1️⃣ BUILD & TEST (PR + MAIN)
