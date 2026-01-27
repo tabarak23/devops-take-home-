@@ -12,6 +12,12 @@ COPY src ./src
 #building the app and skipped the tests to make ci fast
 RUN mvn clean package -DskipTests
 
+# download and integrated new relic agent
+RUN curl -L https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip \
+  -o newrelic.zip && \
+  unzip newrelic.zip && \
+  rm newrelic.zip
+
 # last stage
 #lightweight jre image to run the app
 #could have used distrolesss but health check would break coz it doesnt support shell annd pacakage managers
@@ -22,13 +28,18 @@ RUN addgroup -S tabarak && adduser -S tabarak -G tabarak
 #switching to non root user
 USER tabarak
 WORKDIR /app
+#copying new relic agent to runtime image
+COPY --from=foundation /app/newrelic /app/newrelic
 #copying alreadu built jar file from foundation stage
 #keeps run time image small
-COPY --from=foundation /app/target/*.jar app.jar
+COPY --from=foundation /app/target/*.jar mal_ai.jar
 #expose app port
 EXPOSE 8080
+#environment variables for new relic
+ENV NEW_RELIC_APP_NAME="java-fargate-app"
+ENV NEW_RELIC_LOG=stdout
 #health check to see app is running properly
 HEALTHCHECK --interval=30s --timeout=10s --start-period=20s \
   CMD wget -qO- http://localhost:8080/health || exit 1
 #strating the app
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-javaagent:/app/newrelic/newrelic.jar","-jar","mal_ai.jar"]
