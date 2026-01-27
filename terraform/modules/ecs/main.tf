@@ -1,18 +1,41 @@
 # =========================
+# ECS Module for Application
+# =========================
+# Creates ECS cluster, task definition, and Fargate service
+
+# =========================
+# Locals
+# =========================
+
+locals {
+  name = "${var.project_name}-${var.stage}"
+
+  common_tags = {
+    Project     = var.project_name
+    Environment = var.stage
+    ManagedBy   = "Terraform"
+  }
+}
+
+# =========================
 # ECS Cluster
 # =========================
 
-resource "aws_ecs_cluster" "this" {
-  name = "${var.name}-cluster"
-  tags = var.common_tags
+resource "aws_ecs_cluster" "main" {
+  name = "${local.name}-cluster"
+
+  tags = merge(
+    { Name = "${local.name}-cluster" },
+    local.common_tags
+  )
 }
 
 # =========================
 # Task Definition
 # =========================
 
-resource "aws_ecs_task_definition" "this" {
-  family                   = "${var.name}-task"
+resource "aws_ecs_task_definition" "main" {
+  family                   = "${local.name}-task"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = var.cpu
@@ -20,40 +43,44 @@ resource "aws_ecs_task_definition" "this" {
   execution_role_arn       = var.execution_role_arn
   task_role_arn            = var.task_role_arn
 
-  container_definitions = jsonencode([{
-    name      = "app"
-    image     = var.image
-    essential = true
+  container_definitions = jsonencode([
+    {
+      name      = "app"
+      image     = var.image
+      essential = true
 
-    portMappings = [{
-      containerPort = var.container_port
-    }]
+      portMappings = [
+        {
+          containerPort = var.container_port
+        }
+      ]
 
-    logConfiguration = {
-      logDriver = "awslogs"
-      options = {
-        awslogs-group         = var.log_group_name
-        awslogs-region        = var.region
-        awslogs-stream-prefix = "ecs"
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = var.log_group_name
+          awslogs-region        = var.aws_region
+          awslogs-stream-prefix = "ecs"
+        }
       }
     }
-  }])
+  ])
 }
 
 # =========================
 # ECS Service
 # =========================
 
-resource "aws_ecs_service" "this" {
-  name            = "${var.name}-service"
-  cluster         = aws_ecs_cluster.this.id
-  task_definition = aws_ecs_task_definition.this.arn
+resource "aws_ecs_service" "main" {
+  name            = "${local.name}-service"
+  cluster         = aws_ecs_cluster.main.id
+  task_definition = aws_ecs_task_definition.main.arn
   desired_count   = var.desired_count
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = var.private_subnet_ids
-    security_groups = [var.ecs_security_group_id]
+    subnets          = var.private_subnet_ids
+    security_groups  = [var.ecs_security_group_id]
     assign_public_ip = false
   }
 
@@ -66,4 +93,9 @@ resource "aws_ecs_service" "this" {
   lifecycle {
     ignore_changes = [desired_count]
   }
+
+  tags = merge(
+    { Name = "${local.name}-service" },
+    local.common_tags
+  )
 }

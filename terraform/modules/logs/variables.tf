@@ -1,15 +1,15 @@
-variable "name" {
-  description = "Base name for CloudWatch log group"
+variable "project_name" {
+  description = "Name of the project"
+  type        = string
+}
+
+variable "stage" {
+  description = "Deployment stage (dev, staging, prod)"
   type        = string
 }
 
 variable "log_retention_days" {
-  description = "Log retention period in days"
+  description = "CloudWatch log retention period in days"
   type        = number
   default     = 30
-}
-
-variable "common_tags" {
-  description = "Common tags applied to log resources"
-  type        = map(string)
 }

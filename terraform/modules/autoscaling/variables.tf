@@ -1,5 +1,10 @@
-variable "name" {
-  description = "Base name for autoscaling resources"
+variable "project_name" {
+  description = "Name of the project"
+  type        = string
+}
+
+variable "stage" {
+  description = "Deployment stage (dev, staging, prod)"
   type        = string
 }
 
