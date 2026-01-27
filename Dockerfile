@@ -44,7 +44,7 @@ WORKDIR /app
 #copying alreadu built jar file from foundation stage
 #keeps run time image small
 COPY --from=foundation /app/target/*.jar mal_ai.jar
-COPY --from=build /app/newrelic /app/newrelic
+COPY --from=foundation /app/newrelic /app/newrelic
 
 
 #expose app port
