@@ -54,6 +54,16 @@ resource "aws_ecs_task_definition" "main" {
           containerPort = var.container_port
         }
       ]
+      environment = [
+      {
+        name  = "NEW_RELIC_APP_NAME"
+        value = "${var.project_name}-${var.stage}"
+      },
+      {
+        name  = "NEW_RELIC_ENABLED"
+        value = "true"
+      }
+    ]
 
       logConfiguration = {
         logDriver = "awslogs"
