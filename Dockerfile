@@ -59,10 +59,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=20s \
 
 
 #strating the app
-ENTRYPOINT [
-  "java",
-  "-javaagent:/app/newrelic/newrelic.jar",
-  "-Dnewrelic.config.agent_enabled=true",
-  "-jar",
-  "mal_ai.jar"
-]
+ENTRYPOINT ["java","-javaagent:/app/newrelic/newrelic.jar","-Dnewrelic.config.agent_enabled=true","-jar","mal_ai.jar"]
