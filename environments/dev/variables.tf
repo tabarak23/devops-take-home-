@@ -17,3 +17,8 @@ variable "vpc_cidr" {
   description = "VPC CIDR block"
   type        = string
 }
+
+variable "image" {
+  description = "Docker image to use"
+  type        = string
+}
