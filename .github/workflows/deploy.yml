@@ -16,7 +16,7 @@ env:
   JAVA_VERSION: '17'
 
   # Deterministic naming inputs (must match Terraform)
-  PROJECT_NAME: mal_exercise
+  PROJECT_NAME: mal-exercise
   STAGE: dev
 
   # Docker / ECR
@@ -75,6 +75,10 @@ jobs:
           aws ecr get-login-password --region $AWS_REGION \
             | docker login --username AWS --password-stdin \
               ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com
+      - name: Build Docker image (for push)
+        run: |
+          IMAGE_NAME=${PROJECT_NAME}
+          docker build -t $IMAGE_NAME:${{ github.sha }} .
 
       - name: Push Docker image
         run: |
