@@ -119,3 +119,19 @@ module "autoscaling" {
   cluster_name = module.ecs.cluster_name
   service_name = module.ecs.service_name
 }
+
+
+# =========================
+# ECR
+# =========================
+
+module "ecr" {
+  source = "../../terraform/modules/ecr"
+
+  repository_name = "${var.project_name}-${var.stage}"
+  common_tags = {
+    Project     = var.project_name
+    Environment = var.stage
+    ManagedBy   = "Terraform"
+  }
+}
